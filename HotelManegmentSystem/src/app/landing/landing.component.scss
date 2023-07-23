@@ -1,0 +1,17 @@
+.container {
+
+    display: flex;
+    justify-content: flex-end;
+    background-image: url('../../assets/imgeges/h30.jpg');
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btns{
+    padding: 6px 6px;
+    margin: 5px;
+}
+.btn-container{
+    position: relative;
+    top: 25px;
+}
