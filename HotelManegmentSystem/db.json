@@ -1,0 +1,76 @@
+{
+  "admin": [
+    {
+      "id": "rajeshjadhav",
+      "name": "raj jadhav",
+      "email": "jadhavrajesh671@gmail.com",
+      "gender": "male",
+      "password": "1212"
+    },
+    {
+      "id": "admin",
+      "name": "Ajay Kharat",
+      "email": "kharatajay023@gmail.com",
+      "password": "admin"
+    },
+    {
+      "id": "raj12",
+      "name": "raj jadha",
+      "email": "jadhavrajesh671@gmail.com",
+      "gender": "male",
+      "password": "1212"
+    },
+    {
+      "id": "rajesh12",
+      "name": "rajesh jadhav",
+      "email": "kaka@gmail.com",
+      "mobile": "989898989",
+      "password": "rajesh12",
+      "gender": "male"
+    },
+    {
+      "id": "rajesh11",
+      "name": "Rajabhau JADHAV",
+      "email": "jadhav@gmail.com",
+      "mobile": "2222222222",
+      "password": "rajesh11",
+      "gender": "male"
+    },
+    {
+      "id": "rajesh",
+      "name": "Rajabhau JADHAV",
+      "email": "jajaj@gamil.com",
+      "mobile": "3333333333",
+      "password": "rajesh",
+      "gender": "male"
+    }
+  ],
+  "user": [
+    {
+      "username": "raj",
+      "Email": "jadhavrajesh671@gmail.com",
+      "Mobilel": "9090909090",
+      "Password": "1212",
+      "Gender": "male",
+      "id": 1
+    }
+  ],
+  "owener": [
+    {
+      "id": "rajesh",
+      "name": "Rajabhau JADHAV",
+      "email": "jajaj@gamil.com",
+      "mobile": "3333333333",
+      "password": "rajesh",
+      "gender": "male"
+    },
+    {
+      "id": "pappu",
+      "name": "pappu chaiwala",
+      "email": "papubuisness@gmail.com",
+      "mobile": "8888888888",
+      "password": "pappu",
+      "gender": "male"
+    }
+  ]
+}

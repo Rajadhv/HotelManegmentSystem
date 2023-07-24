@@ -1,40 +1,38 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { DefaltapiService } from 'src/app/common/shared/defaltapi.service';
 
 @Component({
-  selector: 'app-adminlogin',
-  templateUrl: './adminlogin.component.html',
-  styleUrls: ['./adminlogin.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class AdminloginComponent {
+export class LoginComponent {
+  journey!: string;
+  result: any;
   constructor(
     private fb: FormBuilder,
-    private rouer: Router,
-    private service: DefaltapiService
+    private router: Router,
+    private common: DefaltapiService
   ) {}
-  result: any;
+  back() {}
+
   loginForm = this.fb.group({
     id: this.fb.control('', Validators.required),
     password: this.fb.control('', Validators.required),
   });
-  proceedLogin() {
+  login() {
     if (this.loginForm.valid) {
-      this.service.getAdminByCode(this.loginForm.value.id).subscribe((res) => {
+      this.common.getowenerByCode(this.loginForm.value.id).subscribe((res) => {
         this.result = res;
         if (this.result.password == this.loginForm.value.password) {
-          sessionStorage.setItem('username', this.result.id);
+          sessionStorage.setItem('id', this.result.id);
           sessionStorage.setItem('password', this.result.password);
-          this.rouer.navigateByUrl('admin/home');
-          alert('wellcome login sccessfully!!!');
-        } else {
-          alert('invalid pssword');
+          this.router.navigateByUrl('owener/home');
         }
       });
     } else {
-      alert('enter valid data');
     }
   }
 }

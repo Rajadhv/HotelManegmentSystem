@@ -17,7 +17,7 @@ const routes: Routes = [
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
   {
-    path: 'owner',
+    path: 'owener',
     loadChildren: () =>
       import('./owener/owener.module').then((m) => m.OwenerModule),
   },

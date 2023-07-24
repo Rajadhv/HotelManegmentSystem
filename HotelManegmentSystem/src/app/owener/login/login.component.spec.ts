@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OwenerComponent } from './owener.component';
+import { LoginComponent } from './login.component';
 
-describe('OwenerComponent', () => {
-  let component: OwenerComponent;
-  let fixture: ComponentFixture<OwenerComponent>;
+describe('LoginComponent', () => {
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OwenerComponent]
+      declarations: [LoginComponent]
     });
-    fixture = TestBed.createComponent(OwenerComponent);
+    fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

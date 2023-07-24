@@ -2,7 +2,7 @@
   <form class="example-form" [formGroup]="loginForm">
     <mat-form-field class="example-full-width">
       <mat-label>username</mat-label>
-      <input matInput formControlName="userName" />
+      <input matInput formControlName="id" />
     </mat-form-field>
     <br />
     <mat-form-field class="example-full-width">
@@ -12,7 +12,7 @@
 
     <div>
       <button mat-raised-button color="primary" (click)="login()">Login</button>
-      <a routerLink="owener" mat-raised-button color="accent">New Owner?</a>
+      <a routerLink="register" mat-raised-button color="accent">New Owner?</a>
     </div>
   </form>
   <div class="backbtn">

@@ -1,0 +1,43 @@
+<p>register works!</p>
+<div class="container">
+    <form class="example-form" [formGroup]="signupform"  >
+      <mat-form-field class="example-full-width">
+        <mat-label>username</mat-label>
+        <input matInput formControlName="id" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Fullname Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" /> </mat-form-field
+      ><br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Mobile</mat-label>
+        <input matInput formControlName="mobile" /> </mat-form-field
+      ><br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          formControlName="password"
+        /> </mat-form-field
+      ><br />
+      <br />
+      <mat-radio-group formControlName="gender" aria-label="Select an option">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="other">Other</mat-radio-button>
+      </mat-radio-group>
+      <div>
+        <button mat-raised-button color="primary" (click)="submit()">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+  

@@ -7,11 +7,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    MatToolbarModule,
     MatCardModule,
     MatInputModule,
     MatRadioModule,
@@ -28,6 +29,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     HttpClientModule,
     MatFormFieldModule,
+    MatToolbarModule,
   ],
 })
 export class SharedModule {}
