@@ -28,7 +28,11 @@ export class AdminsignupComponent {
   signupform = this.fb.group({
     id: this.fb.control(
       '',
-      Validators.compose([Validators.required, Validators.minLength(5)])
+      Validators.compose([
+        Validators.required,
+        Validators.pattern('[a-zA-Z]*$'),
+        Validators.minLength(5),
+      ])
     ),
     name: this.fb.control('', Validators.required),
     email: this.fb.control('', Validators.required),

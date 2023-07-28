@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class CommonapiserviceService {
   url = 'http://localhost:3000/';
-  user= 'http://localhost:3000/user';
+  user = 'http://localhost:3000/user';
   get: any;
   constructor(private http: HttpClient) {}
   postapicall(endpoint: string, formdata: any) {
@@ -17,4 +17,7 @@ export class CommonapiserviceService {
   //   let url = this.url + endpoint;
   //   return this.http.get(url, formdata);
   // }
+  getapicall(endpoint: any) {
+    let url = this.url + endpoint;
+  }
 }

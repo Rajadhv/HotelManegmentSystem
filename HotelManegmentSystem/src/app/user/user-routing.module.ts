@@ -4,14 +4,16 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { UsersignupComponent } from './usersignup/usersignup.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 const routes: Routes = [
-  { path: '', component: UserhomeComponent },{
-    path: 'login',component:UserloginComponent
+  { path: 'home', component: UserhomeComponent },
+  {
+    path: '',
+    component: UserloginComponent,
   },
   { path: 'signup', component: UsersignupComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), ],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class UserRoutingModule {}

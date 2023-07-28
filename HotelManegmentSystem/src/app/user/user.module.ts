@@ -6,6 +6,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UsersignupComponent } from './usersignup/usersignup.component';
 import { SharedModule } from '../common/shared/shared.module';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { SharedModule } from '../common/shared/shared.module';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule,SharedModule
+    UserRoutingModule,SharedModule,
   ]
 })
 export class UserModule { }

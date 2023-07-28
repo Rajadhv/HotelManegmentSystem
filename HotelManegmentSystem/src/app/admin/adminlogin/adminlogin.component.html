@@ -1,9 +1,9 @@
 <div class="container">
-    
+  
   <form
     class="example-form"
     [formGroup]="loginForm"
-    (ngSubmit)="proceedLogin()"
+    (ngSubmit)="Login()"
   >
     <mat-form-field class="example-full-width">
       <mat-label>username</mat-label>
@@ -22,5 +22,8 @@
       >
     </div>
   </form>
-
+  <div class="backbtn">
+    <button mat-raised-button color="primary" class="btns" (click)="back()">
+      Back
+    </button>
 </div>

@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './landing/landing.component';
 import { SharedModule } from './common/shared/shared.module';
 
-
 @NgModule({
   declarations: [AppComponent, LandingComponent],
   imports: [
@@ -15,7 +14,6 @@ import { SharedModule } from './common/shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent],

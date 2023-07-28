@@ -13,14 +13,21 @@ export class AdminloginComponent {
   constructor(
     private fb: FormBuilder,
     private rouer: Router,
+
     private service: DefaltapiService
   ) {}
+
+  back() {
+    {
+      this.rouer.navigateByUrl('home');
+    }
+  }
   result: any;
   loginForm = this.fb.group({
     id: this.fb.control('', Validators.required),
     password: this.fb.control('', Validators.required),
   });
-  proceedLogin() {
+  Login() {
     if (this.loginForm.valid) {
       this.service.getAdminByCode(this.loginForm.value.id).subscribe((res) => {
         this.result = res;

@@ -6,13 +6,20 @@ import { Injectable } from '@angular/core';
 })
 export class DefaltapiService {
   admin = 'http://localhost:3000/admin';
-  users = 'http://localhost:3000/users';
+  user = 'http://localhost:3000/user';
   owener = 'http://localhost:3000/owener';
   url2 = 'http://localhost:3000/hotels';
   url3 = 'http://localhost:3000/bookings';
   constructor(private http: HttpClient) {}
+  registerHotel(data: any) {
+    return this.http.post(this.url2, data);
+  }
+  getHotelList() {
+    return this.http.get(this.url2);
+  }
+
   getusers() {
-    return this.http.get(this.users);
+    return this.http.get(this.user);
   }
   registerAdmin(data: any) {
     return this.http.post(this.admin, data);
@@ -29,10 +36,10 @@ export class DefaltapiService {
   }
 
   postusers(data: any) {
-    return this.http.post(this.users, data);
+    return this.http.post(this.user, data);
   }
   getuserByCode(id: any) {
-    return this.http.get(this.users + '/' + id);
+    return this.http.get(this.user + '/' + id);
   }
 
   getAdminByCode(id: any) {

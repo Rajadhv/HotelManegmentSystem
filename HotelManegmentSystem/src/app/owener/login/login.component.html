@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="example-form" [formGroup]="loginForm">
+  <form class="example-form" [formGroup]="loginForm" (ngSubmit)="Login()">
     <mat-form-field class="example-full-width">
       <mat-label>username</mat-label>
       <input matInput formControlName="id" />
@@ -11,8 +11,10 @@
     </mat-form-field>
 
     <div>
-      <button mat-raised-button color="primary" (click)="login()">Login</button>
-      <a routerLink="register" mat-raised-button color="accent">New Owner?</a>
+      <button mat-raised-button color="primary">Login</button>
+      <a routerLink="/owener/signup" mat-raised-button color="accent"
+        >New Owener?</a
+      >
     </div>
   </form>
   <div class="backbtn">

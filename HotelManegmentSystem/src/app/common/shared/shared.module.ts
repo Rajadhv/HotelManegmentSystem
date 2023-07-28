@@ -8,10 +8,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatIcon } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    MatIconModule,
     MatToolbarModule,
     MatCardModule,
     MatInputModule,
@@ -19,10 +25,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatFormFieldModule,
+    MatPaginatorModule,
   ],
   exports: [
     MatCardModule,
+    MatIconModule,
     MatInputModule,
     MatRadioModule,
     MatButtonModule,

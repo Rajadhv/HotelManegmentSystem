@@ -7,5 +7,5 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
-  signupform!: FormGroup;
+  
 }

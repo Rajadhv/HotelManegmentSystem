@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DefaltapiService } from 'src/app/common/shared/defaltapi.service';
 
@@ -9,30 +9,33 @@ import { DefaltapiService } from 'src/app/common/shared/defaltapi.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  journey!: string;
-  result: any;
   constructor(
     private fb: FormBuilder,
-    private router: Router,
-    private common: DefaltapiService
+    private apicall: DefaltapiService,
+    private router: Router
   ) {}
-  back() {}
-
+  result: any;
   loginForm = this.fb.group({
     id: this.fb.control('', Validators.required),
     password: this.fb.control('', Validators.required),
   });
-  login() {
+
+  Login() {
     if (this.loginForm.valid) {
-      this.common.getowenerByCode(this.loginForm.value.id).subscribe((res) => {
+      this.apicall.getowenerByCode(this.loginForm.value.id).subscribe((res) => {
         this.result = res;
-        if (this.result.password == this.loginForm.value.password) {
-          sessionStorage.setItem('id', this.result.id);
-          sessionStorage.setItem('password', this.result.password);
-          this.router.navigateByUrl('owener/home');
-        }
       });
+      if (this.result.password === this.loginForm.value.password) {
+        sessionStorage.setItem('username', this.result.id);
+        sessionStorage.setItem('password', this.result.password);
+        this.router.navigateByUrl('owener/owener');
+        alert('wellcome login sccessfully!!!');
+      } else {
+        alert('invalid pssword');
+      }
     } else {
+      alert('enter valid data');
     }
   }
+  back() {}
 }
