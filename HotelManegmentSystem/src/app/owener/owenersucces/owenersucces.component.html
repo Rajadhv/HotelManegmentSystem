@@ -1,1 +1,30 @@
-<p>owenersucces works!</p>
+<div class="btncontainer">
+  <button mat-raised-button routerLink="/owener/newhotel">ADD HOTEL</button>
+  <button mat-raised-button (click)="getdata()">Hotel Details</button>
+  <button mat-raised-button routerLink="/home">BACK</button>
+</div>
+
+<table>
+  <div>
+    <input
+      type="text"
+      placeholder="Search here..."
+      [(ngModel)]="inputValue"
+      (keyup)="inptVal($event)"
+    />
+    <button (click)="searchBoxValue()">Search</button>
+  </div>
+  <tr>
+    <th *ngFor="let heading of tableHeading">{{ heading }}</th>
+  </tr>
+
+  <tr *ngFor="let hoteldata of hoteldata">
+    <th>{{ hoteldata.hotelName }}</th>
+    <th>{{ hoteldata.hotelAddress }}</th>
+    <th>{{ hoteldata.roomsAvailable }}</th>
+    <th>{{ hoteldata.hotelMenu }}</th>
+    <th>{{ hoteldata.roomsAvailable }}</th>
+    <td><mat-icon (click)="delete(hoteldata.id)">delete</mat-icon></td>
+    <td><mat-icon (click)="edit(hoteldata.id)">mode_edit</mat-icon></td>
+  </tr>
+</table>

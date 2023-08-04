@@ -2,6 +2,7 @@ import { throwDialogContentAlreadyAttachedError } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CommonService } from 'src/app/common/common.service';
 import { CommonapiserviceService } from 'src/app/common/commonapiservice.service';
 import { DefaltapiService } from 'src/app/common/shared/defaltapi.service';
@@ -19,19 +20,47 @@ export class SignupComponent {
     private fb: FormBuilder,
     private router: Router,
     private common: CommonService,
-    private service: CommonapiserviceService
+    private service: CommonapiserviceService,
+    private toster: ToastrService
   ) {}
   ngOnInit() {
     this.ownersignup();
   }
   ownersignup() {
     this.signupform = this.fb.group({
-      id: ['', [Validators.required, Validators.minLength(5)]],
-      name: ['', []],
-      email: ['', []],
-      mobile: ['', []],
-      password: ['', []],
-      gender: ['', []],
+      userName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.pattern('[a-zA-Z0-9]*$'),
+        ],
+      ],
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.pattern('[a-zA-ZÀ-ÖØ-öø-ÿ.+ -]*$'),
+        ],
+      ],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+        ],
+      ],
+      mobile: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.pattern('[0-9]*$'),
+        ],
+      ],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      gender: ['', [Validators.required]],
     });
   }
   submit() {
@@ -40,16 +69,28 @@ export class SignupComponent {
 
     let requast = {
       name: this.signupform.value.name,
-      id: this.signupform.value.id,
+      userName: this.signupform.value.userName,
       password: this.signupform.value.password,
       mobile: this.signupform.value.mobile,
       email: this.signupform.value.email,
       gender: this.signupform.value.gender,
     };
 
-    this.service.postapicall(endPoint, requast).subscribe((resp: any) => {
-      console.log(resp);
-    });
-    this.router.navigateByUrl('owener/owener');
+    if (this.signupform.valid) {
+      this.service.postapicall(endPoint, requast).subscribe((resp: any) => {
+        console.log(resp);
+
+        this.toster.success('signup successfully!');
+        this.router.navigateByUrl('owener/owener');
+      });
+    } else {
+      this.toster.warning('enter valid data');
+    }
   }
 }
+
+// this.service.postapicall(endPoint, requast).subscribe((resp: any) => {
+//   console.log(resp);
+// });
+// this.toster.success('signup successfully!');
+// this.router.navigateByUrl('owener/owener');

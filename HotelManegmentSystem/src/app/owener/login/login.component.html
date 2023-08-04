@@ -1,8 +1,13 @@
 <div class="container">
-  <form class="example-form" [formGroup]="loginForm" (ngSubmit)="Login()">
+  <form
+    class="example-form"
+    [formGroup]="loginForm"
+    (ngSubmit)="Login()"
+    *ngIf="!showForgetPasswordForm"
+  >
     <mat-form-field class="example-full-width">
       <mat-label>username</mat-label>
-      <input matInput formControlName="id" />
+      <input matInput formControlName="userName" />
     </mat-form-field>
     <br />
     <mat-form-field class="example-full-width">

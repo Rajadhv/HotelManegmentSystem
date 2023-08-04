@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonService } from '../common/common.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { NewhotelregistrationComponent } from '../owener/newhotelregistration/newhotelregistration.component';
 
 @Component({
   selector: 'app-landing',
@@ -8,8 +11,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent {
-  constructor(private router: Router, private commonService: CommonService) {}
-
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+    private commonService: CommonService,
+    private toster: ToastrService
+  ) {}
+  showtost() {
+    this.dialog.open(NewhotelregistrationComponent);
+  }
   journey(journey: string) {
     if (journey === 'admin') {
       this.commonService.journey = 'admin';

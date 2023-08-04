@@ -45,52 +45,7 @@
       "gender": "male"
     }
   ],
-  "hotels": [
-    {
-      "name": "Taj Exotica",
-      "phone": 9127272772,
-      "email": "jadhavrajesh@gmail.com",
-      "menu": "chicken broest",
-      "discription": "top hotel in goa",
-      "address": "goa baga  beach",
-      "arooms": 89,
-      "revenu": 898989,
-      "id": 1
-    },
-    {
-      "name": "club mahindra",
-      "phone": 7878787878,
-      "email": "clubemahindra@gmail.com",
-      "menu": "chiicken suate",
-      "discription": "big hotel in goa",
-      "address": "varca beach goa",
-      "arooms": 78,
-      "revenu": 8999989,
-      "id": 2
-    },
-    {
-      "name": "hotel opal",
-      "phone": 43433444,
-      "email": "opalhotel.com",
-      "menu": "firsj fry",
-      "discription": "best for long stay",
-      "address": "near baba petrol pump aurangabad",
-      "arooms": 45,
-      "revenu": 44444,
-      "id": 3
-    },
-    {
-      "name": "lemon tree",
-      "phone": 129999999,
-      "email": "lemotree@gmail.com",
-      "menu": "lemon jouce",
-      "discription": "4 stae gotel",
-      "address": "pune",
-      "arooms": 35,
-      "revenue": 2999292,
-      "id": 4
-    }
-  ],
+  "hotels": [],
   "user": [
     {
       "id": "rajesh",
@@ -99,48 +54,53 @@
       "password": "rajesh"
     }
   ],
+  "hoteldetails": [
+    {
+      "ownerName": "sagar",
+      "ownercontact": "3333333333",
+      "hotelName": "taj",
+      "hotelAddress": "add",
+      "hotelContact": "dede",
+      "hotelMenu": "ds",
+      "ownerCheck": "dsc",
+      "roomsAvailable": "44",
+      "userPass": "fcds",
+      "id": 4
+    },
+    {
+      "ownerName": "rajesh jadhav",
+      "ownercontact": "3333333333",
+      "hotelName": "club mahindraa",
+      "hotelAddress": "varava goa",
+      "hotelContact": "33333333333",
+      "hotelMenu": "chicken tikka",
+      "ownerCheck": "true",
+      "roomsAvailable": "46",
+      "userPass": "5403",
+      "id": 5
+    },
+    {
+      "ownerName": "admin jadhav",
+      "ownercontact": "0000000",
+      "hotelName": "beywatch",
+      "hotelAddress": "ooty karnataka",
+      "hotelContact": "8998989898",
+      "hotelMenu": "jshhhd",
+      "ownerCheck": "hhd",
+      "roomsAvailable": "78",
+      "userPass": "hjdj",
+      "id": 6
+    }
+  ],
   "owener": [
     {
-      "id": "rajesh",
-      "name": "Rajabhau JADHAV",
-      "email": "jajaj@gamil.com",
-      "mobile": "3333333333",
-      "password": "rajesh",
-      "gender": "male"
-    },
-    {
-      "id": "pappu",
-      "name": "pappu chaiwala",
-      "email": "papubuisness@gmail.com",
-      "mobile": "8888888888",
-      "password": "pappu",
-      "gender": "male"
-    },
-    {
-      "name": "sachin chavhan",
-      "username": "sachin",
-      "password": "sachin",
-      "mobile": "888888888",
-      "email": "sachinchavhan@gmail.com",
+      "name": "jadhav rajesh",
+      "userName": "rajesh",
+      "password": "rajesh123",
+      "mobile": "9090909899",
+      "email": "jadhavraj@gmail.com",
       "gender": "male",
-      "id": "B9KfgzJ"
-    },
-    {
-      "name": "akashy wagh",
-      "username": "akashy",
-      "password": "akashy",
-      "mobile": "889989899",
-      "email": "akashy@gmail.com",
-      "gender": "male",
-      "id": "7Xy_vrs"
-    },
-    {
-      "name": "ajay hatawate",
-      "id": "ajayhata",
-      "password": "ajayhata",
-      "mobile": "9999999999",
-      "email": "hatwateajay@gmail.com",
-      "gender": "male"
+      "id": 1
     }
   ]
 }
