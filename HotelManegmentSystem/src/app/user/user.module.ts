@@ -6,18 +6,18 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UsersignupComponent } from './usersignup/usersignup.component';
 import { SharedModule } from '../common/shared/shared.module';
-import { MatDialog } from '@angular/material/dialog';
 
+import { FiltersearchPipe } from './filtersearch.pipe';
+import { HotelbookingComponent } from './hotelbooking/hotelbooking.component';
 
 @NgModule({
   declarations: [
     UserhomeComponent,
     UserloginComponent,
-    UsersignupComponent
+    UsersignupComponent,
+    FiltersearchPipe,
+    HotelbookingComponent,
   ],
-  imports: [
-    CommonModule,
-    UserRoutingModule,SharedModule,
-  ]
+  imports: [CommonModule, UserRoutingModule, SharedModule],
 })
-export class UserModule { }
+export class UserModule {}

@@ -16,18 +16,22 @@ export class OwenersuccesComponent {
   hoteldata: any;
   journey!: string;
   endpoing!: string;
-  serchboxval: any;
-  inp: any;
   inputValue: any;
+  searchBoxVal!: any;
+  inp: any;
+  editid!: number;
+  databyid: any;
   userHotelDetails: any[] = [];
   // searchboxvalue: any;
 
   tableHeading: any[] = [
-    'hotelName',
-    'hotelAddress',
-    'roomsAvailable',
-    'hotelMenu',
-    'roomsAvailable',
+    'HotelName',
+    'HotelAddress',
+    'RoomsAvailable',
+    'HotelMenu',
+    'Hotel Email',
+    'Delete',
+    'Edit',
   ];
 
   constructor(
@@ -35,6 +39,7 @@ export class OwenersuccesComponent {
     private common: CommonService,
     private router: Router,
     private dialog: MatDialog,
+
     private toster: ToastrService
   ) {}
 
@@ -50,24 +55,25 @@ export class OwenersuccesComponent {
 
     console.log('hoteldata', this.hoteldata);
   }
-
-  inptVal(val: any) {
+  inpitVal(val: any) {
     console.log('val', val.target.value);
-    console.log('inputValue', this.inputValue);
-
+    console.log('inputvalue', this.inpitVal);
     this.inp = val.target.value;
   }
   searchBoxValue() {
-    this.serchboxval = this.inp;
+    console.log(this.inputValue);
+    this.searchBoxVal = this.inputValue;
   }
-
   async delete(id: number) {
     await this.apicallservice.deleteApiCall('hoteldetails', id).toPromise();
     this.getdata();
   }
-  edit(id: number) {
+  async edit(id: number) {
     this.common.id = id;
-    this.dialog.open(NewhotelregistrationComponent);
+    this.databyid = await this.apicallservice
+      .getapicall('hoteldetails', id)
+      .toPromise();
+    this.common.databyid = this.databyid;
+    this.router.navigateByUrl('owener/newhotel');
   }
 }
-

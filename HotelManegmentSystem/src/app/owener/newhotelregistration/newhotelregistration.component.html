@@ -130,22 +130,22 @@
         > </mat-form-field
       ><br />
       <mat-form-field class="form-field">
-        <mat-label>Owner Check</mat-label>
-        <input matInput formControlName="ownerCheck" />
-        <mat-hint *ngIf="!signupForm.get('ownerCheck')?.touched"
+        <mat-label>Hotel Email</mat-label>
+        <input matInput formControlName="hotelemail" />
+        <mat-hint *ngIf="!signupForm.get('hotelemail')?.touched"
           >Enter owner check here</mat-hint
         >
-        <mat-error *ngIf="signupForm.get('ownerCheck')?.errors?.['required']"
+        <mat-error *ngIf="signupForm.get('hotelemail')?.errors?.['required']"
           >this field is required</mat-error
         >
       </mat-form-field>
       <mat-form-field class="form-field">
-        <mat-label>User Pass</mat-label>
-        <input matInput formControlName="userPass" />
-        <mat-hint *ngIf="!signupForm.get('userPass')?.touched"
+        <mat-label>Discription</mat-label>
+        <input matInput formControlName="dis" />
+        <mat-hint *ngIf="!signupForm.get('dis')?.touched"
           >Enter user pass here</mat-hint
         >
-        <mat-error *ngIf="signupForm.get('userPass')?.errors?.['required']"
+        <mat-error *ngIf="signupForm.get('dis')?.errors?.['required']"
           >this field is required</mat-error
         >
       </mat-form-field>

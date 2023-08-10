@@ -1,11 +1,8 @@
-import { throwDialogContentAlreadyAttachedError } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CommonService } from 'src/app/common/common.service';
 import { CommonapiserviceService } from 'src/app/common/commonapiservice.service';
-import { DefaltapiService } from 'src/app/common/shared/defaltapi.service';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +16,6 @@ export class SignupComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private common: CommonService,
     private service: CommonapiserviceService,
     private toster: ToastrService
   ) {}

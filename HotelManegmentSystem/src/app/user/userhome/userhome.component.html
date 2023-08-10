@@ -1,1 +1,48 @@
-<p>userhome works!</p>
+<div class="searchbox" style="margin-left: 500px">
+  <input
+    matInput
+    type="text"
+    placeholder="search Hotel.."
+    [(ngModel)]="inputValue"
+  />
+  <button mat-raised-button (click)="searchBoxValue()">search</button>
+</div>
+<ng-container *ngIf="hotels | filtersearch : searchBoxVal as hotels">
+  <div class="container">
+    <mat-card *ngFor="let hoteldetails of hotels">
+      <div class="img" id="box">
+        <img
+          matCardImage
+          src="https://source.unsplash.com/1600x900/?{{ hoteldetails.img }}"
+          alt="hotelImage"
+        />
+      </div>
+      <div class="img">
+        <mat-card-title> {{ hoteldetails.hotelName }} </mat-card-title>
+
+        <mat-card-content
+          ><b> Hotel :</b> {{ hoteldetails.hotelName }}
+        </mat-card-content>
+        <mat-card-content
+          ><b> Email : </b>{{ hoteldetails.hotelemail }}
+        </mat-card-content>
+        <mat-card-content
+          ><b>Special Dish : </b>{{ hoteldetails.hotelMenu }}
+        </mat-card-content>
+        <mat-card-content
+          ><b>Discription : </b>{{ hoteldetails.dis }}
+        </mat-card-content>
+        <mat-card-content
+          ><b>Location : </b>{{ hoteldetails.hotelAddress }}
+        </mat-card-content>
+        <mat-card-content><b>Available rooms : </b> Last 2 </mat-card-content>
+        <mat-card-content
+          ><b>Room Dis : </b>Accommodates 3 Adults
+        </mat-card-content>
+        <mat-card-footer>
+          <button mat-raised-button  (click)="booking()" color="accent">Book Hotel</button>
+        </mat-card-footer>
+      </div>
+    </mat-card>
+  </div>
+</ng-container>

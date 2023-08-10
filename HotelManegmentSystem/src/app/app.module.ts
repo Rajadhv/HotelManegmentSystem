@@ -16,7 +16,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    ToastrModule.forRoot(),MatDialogModule
+    ToastrModule.forRoot(),
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

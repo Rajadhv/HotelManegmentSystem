@@ -9,15 +9,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatIcon } from '@angular/material/icon';
+
 import { MatIconModule } from '@angular/material/icon';
-import { MatTable, MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     FormsModule,
     MatIconModule,
     MatToolbarModule,
@@ -34,6 +37,8 @@ import { MatSort } from '@angular/material/sort';
     MatTableModule,
     MatIconModule,
     MatInputModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     FormsModule,
     MatRadioModule,
     MatButtonModule,

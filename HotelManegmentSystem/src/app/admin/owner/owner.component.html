@@ -1,0 +1,39 @@
+<div class="container">
+  <mat-toolbar>
+    <a routerLink="/admin/home">Admin</a>
+    <span class="example-spacer"></span>
+    <a routerLink="/admin/hotels" mat-raised-button>Hotels</a>
+    <a routerLink="/admin/owner" mat-raised-button>Owners</a>
+    <a routerLink="/admin/users" mat-raised-button>Users</a>
+  </mat-toolbar>
+</div>
+
+<div class="table-containor" style="overflow-x: auto">
+  <table>
+    <tr>
+      <th *ngFor="let heading of tableheading">{{ heading }}</th>
+    </tr>
+    <tr *ngFor="let ownerdata of ownerdata">
+      <th>{{ ownerdata.id }}</th>
+      <th>{{ ownerdata.name }}</th>
+      <th>{{ ownerdata.email }}</th>
+      <td>
+        <mat-icon color="primary">edit</mat-icon>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<!-- <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>owner name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumes"></tr>
+    <tr mat-header-row *matRowDef="let row; columns: displayedColumes"></tr>
+  </table> -->

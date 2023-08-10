@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CommonService } from 'src/app/common/common.service';
 import { CommonapiserviceService } from 'src/app/common/commonapiservice.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-newhotelregistration',
@@ -11,6 +12,8 @@ import { CommonapiserviceService } from 'src/app/common/commonapiservice.service
   styleUrls: ['./newhotelregistration.component.scss'],
 })
 export class NewhotelregistrationComponent {
+  databyid!: any;
+  editid!: number;
   constructor(
     private router: Router,
     private apicallservice: CommonapiserviceService,
@@ -21,13 +24,15 @@ export class NewhotelregistrationComponent {
   signupForm!: FormGroup;
 
   ngOnInit() {
+    this.editid = this.common.id;
+    this.databyid = this.common.databyid;
     this.owenerregistration();
   }
 
   owenerregistration() {
     this.signupForm = this.fb.group({
       ownerName: [
-        '',
+        this.databyid ? this.databyid.ownerName : '',
         [
           Validators.required,
           Validators.minLength(5),
@@ -35,9 +40,12 @@ export class NewhotelregistrationComponent {
           this.common.whiteSpaceValidator,
         ],
       ],
-      ownerContact: ['', [Validators.required, Validators.pattern('[0-9]*$')]],
+      ownerContact: [
+        this.databyid ? this.databyid.ownercontact : '',
+        [Validators.required, Validators.pattern('[0-9]*$')],
+      ],
       hotelName: [
-        '',
+        this.databyid ? this.databyid.hotelName : '',
         [
           Validators.required,
           Validators.minLength(5),
@@ -45,21 +53,30 @@ export class NewhotelregistrationComponent {
         ],
       ],
       hotelAddress: [
-        '',
+        this.databyid ? this.databyid.hotelAddress : '',
         [
           Validators.required,
           Validators.minLength(5),
           Validators.pattern('[a-zA-Z0-9 ]*$'),
         ],
       ],
-      hotelContact: ['', [Validators.required, Validators.pattern('[0-9]*$')]],
-      hotelMenu: ['', [Validators.required, Validators.minLength(5)]],
-      roomsAvailable: [
-        '',
+      hotelContact: [
+        this.databyid ? this.databyid.hotelContact : '',
         [Validators.required, Validators.pattern('[0-9]*$')],
       ],
-      ownerCheck: ['', [Validators.required]],
-      userPass: ['', [Validators.required]],
+      hotelMenu: [
+        this.databyid ? this.databyid.hotelMenu : '',
+        [Validators.required, Validators.minLength(5)],
+      ],
+      roomsAvailable: [
+        this.databyid ? this.databyid.roomsAvailable : '',
+        [Validators.required, Validators.pattern('[0-9]*$')],
+      ],
+      hotelemail: [
+        this.databyid ? this.databyid.hotelemail : '',
+        [Validators.required],
+      ],
+      dis: [this.databyid ? this.databyid.dis : '', [Validators.required]],
     });
   }
   submitDetails() {
@@ -72,29 +89,41 @@ export class NewhotelregistrationComponent {
       hotelAddress: this.signupForm.value.hotelAddress,
       hotelContact: this.signupForm.value.hotelContact,
       hotelMenu: this.signupForm.value.hotelMenu,
-      ownerCheck: this.signupForm.value.ownerCheck,
+      hotelemail: this.signupForm.value.hotelemail,
       roomsAvailable: this.signupForm.value.roomsAvailable,
-      userPass: this.signupForm.value.userPass,
+      dis: this.signupForm.value.dis,
     };
-    // this.apicallservice
-    //   .postapicall(endPoint, request)
-    //   .subscribe((resp: any) => {
-    //     console.log(resp);
-    //   });
-    // this.router.navigateByUrl('owener/owener');
-
-    if (this.signupForm.valid) {
+    if (this.editid) {
+      this.apicallservice
+        .patchApicall(endPoint, request, this.editid)
+        .subscribe((resp) => {
+          console.log(resp);
+        });
+    } else {
       this.apicallservice
         .postapicall(endPoint, request)
         .subscribe((resp: any) => {
-          this.toster.success( 'data submited successfully!!');
-          this.router.navigateByUrl('owener/owener');
+          console.log(resp);
         });
-    } else {
-      this.toster.warning('somthing went wrong');
     }
+    this.router.navigateByUrl('owener/owener');
   }
   back() {
     this.router.navigateByUrl('owener/owener');
   }
+  ngOnDestroy() {
+    this.common.databyid = {};
+    this.common.id = '';
+  }
 }
+
+// if (this.signupForm.valid) {
+//   this.apicallservice
+//     .postapicall(endPoint, request)
+//     .subscribe((resp: any) => {
+//       this.toster.success('data submited successfully!!');
+//       this.router.navigateByUrl('owener/owener');
+//     });
+// } else {
+//   this.toster.warning('somthing went wrong');
+// }

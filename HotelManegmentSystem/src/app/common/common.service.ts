@@ -7,8 +7,8 @@ export class CommonService {
   journey!: string;
   userName!: string;
   forgotPassword!: boolean;
-  id!: number;
-
+  id!: any;
+  databyid: any;
   constructor() {}
 
   whiteSpaceValidator(nameFieldValue: any) {

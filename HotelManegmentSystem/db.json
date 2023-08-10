@@ -1,4 +1,38 @@
 {
+  "HotelBooking": [
+    {
+      "fullname": "rajesh",
+      "email": "jadhavrajesh671@gmail.com",
+      "aadhar": "5445454555",
+      "Moblile": "7219787827",
+      "id": 1
+    },
+    {
+      "fullname": "rajssh",
+      "email": "jadhavrajesh671@gmail.com",
+      "aadhar": "687878878",
+      "Moblile": "78787",
+      "id": 2
+    },
+    {
+      "start": "3232-01-01T00:00:00.000Z",
+      "end": "3234-01-01T00:00:00.000Z",
+      "fullname": "",
+      "email": "",
+      "aadhar": "",
+      "Moblile": "",
+      "id": 3
+    },
+    {
+      "start": "2023-08-09T18:30:00.000Z",
+      "end": "2023-08-11T18:30:00.000Z",
+      "fullname": "sachin",
+      "email": "sachin@gmail.com",
+      "aadhar": "333322244555",
+      "Moblile": "912228282",
+      "id": 4
+    }
+  ],
   "admin": [
     {
       "id": "rajeshjadhav",
@@ -48,10 +82,54 @@
   "hotels": [],
   "user": [
     {
-      "id": "rajesh",
-      "name": "Ajay Kharat",
-      "email": "kharatajay023@gmail.com",
-      "password": "rajesh"
+      "firstname": "Rajabhau",
+      "lastname": "JADHAV",
+      "phone": null,
+      "email": "jadhavrajesh671@gmail.com",
+      "userName": "rajesh",
+      "password": "rajesh",
+      "gender": "male",
+      "id": 1
+    },
+    {
+      "firstname": "Rajabhau",
+      "lastname": "JADHAV",
+      "phone": null,
+      "email": "jadhavrajesh671@gmail.com",
+      "userName": "rajesh",
+      "password": "rajesh",
+      "gender": "male",
+      "id": 2
+    },
+    {
+      "firstname": "Rajabhau",
+      "lastname": "JADHAV",
+      "phone": "07218558707",
+      "email": "jadhavrajesh671@gmail.com",
+      "userName": "rajesh",
+      "password": "rajesh",
+      "gender": null,
+      "id": 3
+    },
+    {
+      "firstname": "sachin",
+      "lastname": "JADHAV",
+      "phone": "89898989",
+      "email": "jadhavrajesh671@gmail.com",
+      "userName": "sachin",
+      "password": "sachin",
+      "gender": "male",
+      "id": 4
+    },
+    {
+      "firstname": null,
+      "lastname": null,
+      "phone": null,
+      "email": null,
+      "userName": null,
+      "password": null,
+      "gender": null,
+      "id": 5
     }
   ],
   "hoteldetails": [
@@ -59,12 +137,12 @@
       "ownerName": "sagar",
       "ownercontact": "3333333333",
       "hotelName": "taj",
-      "hotelAddress": "add",
-      "hotelContact": "dede",
-      "hotelMenu": "ds",
-      "ownerCheck": "dsc",
+      "hotelAddress": "benaleum bech goa",
+      "hotelContact": "7878787876",
+      "hotelMenu": "see food",
+      "dis": "5 star property in goa ",
       "roomsAvailable": "44",
-      "userPass": "fcds",
+      "hotelemail": "taj@gamil.com",
       "id": 4
     },
     {
@@ -76,7 +154,7 @@
       "hotelMenu": "chicken tikka",
       "ownerCheck": "true",
       "roomsAvailable": "46",
-      "userPass": "5403",
+      "hotelemail": "clubmahindrae@gamil.com",
       "id": 5
     },
     {
@@ -88,8 +166,68 @@
       "hotelMenu": "jshhhd",
       "ownerCheck": "hhd",
       "roomsAvailable": "78",
-      "userPass": "hjdj",
+      "hotelemail": "bywatch@gamil.com",
       "id": 6
+    },
+    {
+      "ownerName": "sagar",
+      "ownercontact": "3333333333",
+      "hotelName": "taj landsend",
+      "hotelAddress": "marien line mumbai",
+      "hotelContact": "9494944444",
+      "hotelMenu": "falafel",
+      "dis": "5 star property in mumbai ",
+      "roomsAvailable": "44",
+      "hotelemail": "tajlandsend@gamil.com",
+      "id": 7
+    },
+    {
+      "ownerName": "sachin",
+      "ownercontact": "333333334",
+      "hotelName": "lemon tree",
+      "hotelAddress": "aurangabad",
+      "hotelContact": "999898999",
+      "hotelMenu": "everything",
+      "dis": "5 star property in aurangabd ",
+      "roomsAvailable": "20",
+      "hotelemail": "lemontreepune@gamil.com",
+      "id": 8
+    },
+    {
+      "ownerName": "ajinkya shinde",
+      "ownercontact": "9128289898",
+      "hotelName": "Albaik brost",
+      "hotelAddress": "kothrud pune",
+      "hotelContact": "8900099888",
+      "hotelMenu": "arabic chicken",
+      "dis": "arabic food  ",
+      "roomsAvailable": "45",
+      "hotelemail": "albailpune@gamil.com",
+      "id": 9
+    },
+    {
+      "ownerName": " shreeraam salunke",
+      "ownercontact": "9172185578",
+      "hotelName": "vits aurangabad",
+      "hotelAddress": "near reilway statetion",
+      "hotelContact": "0240223434",
+      "hotelMenu": "maratha kanduri",
+      "hotelemail": "vitsarangabad@gamil.com",
+      "roomsAvailable": "45",
+      "dis": "best hotel in aurangbad ",
+      "id": 10
+    },
+    {
+      "ownerName": "rajesh jadhav",
+      "ownercontact": "9823334433",
+      "hotelName": "Ambesetor ajanta",
+      "hotelAddress": " aurngabad jalnaroad",
+      "hotelContact": "2322223434",
+      "hotelMenu": "free brekfast",
+      "hotelemail": "ambesetorajanta@gmail.com",
+      "roomsAvailable": "39",
+      "dis": "near to bus stand ",
+      "id": 11
     }
   ],
   "owener": [

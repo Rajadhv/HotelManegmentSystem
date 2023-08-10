@@ -12,13 +12,17 @@ export class CommonapiserviceService {
     let url = this.url + endpoint;
     return this.http.post(url, formdata);
   }
- 
-  getapicall(endpoint: string) {
-    let url = this.url + endpoint;
+
+  getapicall(endpoint: string, id?: number) {
+    let url = id ? this.url + endpoint + '/' + id : this.url + endpoint;
     return this.http.get(url);
   }
   deleteApiCall(endPoint: string, id: number) {
     let url = this.url + endPoint + '/' + id;
     return this.http.delete(url);
+  }
+  patchApicall(endpoint: any, data: any, id: number) {
+    let url = this.url + endpoint + '/' + id;
+    return this.http.patch(url, data);
   }
 }

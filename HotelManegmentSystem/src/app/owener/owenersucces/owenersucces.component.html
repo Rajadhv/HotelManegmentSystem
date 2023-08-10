@@ -4,27 +4,31 @@
   <button mat-raised-button routerLink="/home">BACK</button>
 </div>
 
-<table>
-  <div>
-    <input
-      type="text"
-      placeholder="Search here..."
-      [(ngModel)]="inputValue"
-      (keyup)="inptVal($event)"
-    />
-    <button (click)="searchBoxValue()">Search</button>
-  </div>
-  <tr>
-    <th *ngFor="let heading of tableHeading">{{ heading }}</th>
-  </tr>
+<div class="serchbox">
+  <input type="text" placeholder="Search here..." [(ngModel)]="inputValue" />
+  <button (click)="searchBoxValue()">Search</button>
+</div>
+<ng-container *ngIf="hoteldata | filter : searchBoxVal as hoteldata">
+  <table>
+    <tr>
+      <th *ngFor="let heading of tableHeading">{{ heading }}</th>
+    </tr>
 
-  <tr *ngFor="let hoteldata of hoteldata">
-    <th>{{ hoteldata.hotelName }}</th>
-    <th>{{ hoteldata.hotelAddress }}</th>
-    <th>{{ hoteldata.roomsAvailable }}</th>
-    <th>{{ hoteldata.hotelMenu }}</th>
-    <th>{{ hoteldata.roomsAvailable }}</th>
-    <td><mat-icon (click)="delete(hoteldata.id)">delete</mat-icon></td>
-    <td><mat-icon (click)="edit(hoteldata.id)">mode_edit</mat-icon></td>
-  </tr>
-</table>
+    <tr *ngFor="let hoteldata of hoteldata">
+      <th>{{ hoteldata.hotelName }}</th>
+      <th>{{ hoteldata.hotelAddress }}</th>
+      <th>{{ hoteldata.roomsAvailable }}</th>
+      <th>{{ hoteldata.hotelMenu }}</th>
+      <th>{{ hoteldata.hotelemail }}</th>
+      <td>
+        
+        <mat-icon color="warn" (click)="delete(hoteldata.id)">delete</mat-icon>
+      </td>
+      <td>
+        <mat-icon color="primary" (click)="edit(hoteldata.id)"
+          >mode_edit</mat-icon
+        >
+      </td>
+    </tr>
+  </table>
+</ng-container>
