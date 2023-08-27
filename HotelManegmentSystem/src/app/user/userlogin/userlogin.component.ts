@@ -60,7 +60,7 @@ export class UserloginComponent {
         }
       });
       if (this.validUser) {
-        this.toster.success('welcome!!!!!')
+        this.toster.success('welcome!!!!!', '{{username}}');
         this.router.navigateByUrl('user/home');
       } else {
         this.toster.error('invalid password');
@@ -68,6 +68,6 @@ export class UserloginComponent {
     }
   }
   usersignup() {
-    this.dialog.open(UsersignupComponent)
+    this.dialog.open(UsersignupComponent);
   }
 }

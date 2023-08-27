@@ -9,9 +9,12 @@ import { SharedModule } from '../common/shared/shared.module';
 import { HotelComponent } from './hotel/hotel.component';
 import { OwnerComponent } from './owner/owner.component';
 import { UserComponent } from './user/user.component';
+import { FilterPipe } from './user/filter.pipe';
+import { OwnerPipe } from './owner/owner.pipe';
+
 
 @NgModule({
-  declarations: [AdminComponent, AdminloginComponent, AdminsignupComponent, HotelComponent, OwnerComponent, UserComponent],
+  declarations: [AdminComponent, AdminloginComponent, AdminsignupComponent, HotelComponent, OwnerComponent, UserComponent, FilterPipe, OwnerPipe, ],
   imports: [CommonModule, AdminRoutingModule, SharedModule],
 })
 export class AdminModule {}

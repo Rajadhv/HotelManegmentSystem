@@ -9,6 +9,13 @@
 </div>
 
 <div class="table-containor" style="overflow-x: auto">
+  <input
+    matInput
+    type="text"
+    placeholder="serch owner"
+    [(ngModel)]="inputvalue"
+  />
+  <button (click)="serchboxvalue()">serch</button>
   <table>
     <tr>
       <th *ngFor="let heading of tableheading">{{ heading }}</th>
@@ -20,7 +27,9 @@
       <td>
         <mat-icon color="primary">edit</mat-icon>
       </td>
-      <td></td>
+      <td>
+        <mat-icon color="warm">delete</mat-icon>
+      </td>
     </tr>
   </table>
 </div>

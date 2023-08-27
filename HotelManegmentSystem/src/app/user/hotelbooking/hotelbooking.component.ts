@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { CommonapiserviceService } from 'src/app/common/commonapiservice.service';
@@ -24,10 +29,10 @@ export class HotelbookingComponent {
     this.hotelresistration = this.fb.group({
       start: new FormControl<Date | null>(null),
       end: new FormControl<Date | null>(null),
-      fullname: ['', []],
-      email: ['', []],
-      aadhar: ['', []],
-      Moblile: ['', []],
+      fullname: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      aadhar: ['', [Validators.required]],
+      Moblile: ['', [Validators.required]],
     });
   }
   submit() {

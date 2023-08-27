@@ -1,1 +1,19 @@
-<p>user works!</p>
+<div class="container">
+  <div class="serchbox">
+    <input matInput placeholder="serch userdata" [(ngModel)]="inputvalue" />
+    <button mat-button (click)="searchBoxValue()">search</button>
+  </div>
+  <ng-container *ngIf="userdata | filter : searchBoxVal as userdata">
+    <table>
+      <tr>
+        <th *ngFor="let heading of tableheading">{{ heading }}</th>
+      </tr>
+      <tr *ngFor="let userdata of userdata">
+        <th>{{ userdata.firstname }}</th>
+        <th>{{ userdata.password }}</th>
+
+        <th>{{ userdata.email }}</th>
+      </tr>
+    </table></ng-container
+  >
+</div>

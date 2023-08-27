@@ -1,1 +1,48 @@
-<p>hotel works!</p>
+<div class="container">
+  <mat-toolbar>
+    <a routerLink="/admin/home">Admin</a>
+    <span class="example-spacer"></span>
+    <a routerLink="/admin/hotels" mat-raised-button>Hotels</a>
+    <a routerLink="/admin/owner" mat-raised-button>Owners</a>
+    <a routerLink="/admin/users" mat-raised-button>Users</a>
+  </mat-toolbar>
+</div>
+<div class="searchbox">
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      type="text"
+      placeholder="search here.."
+      [(ngModel)]="inputvalue"
+    />
+  </mat-form-field>
+  <button mat-raised-button (click)="searchBoxValue()">search</button>
+</div>
+
+<div class="table-containor" style="overflow-x: auto">
+  <ng-container *ngIf="hoteldata | filter : searchBoxVal as hoteldata">
+    <table>
+      <tr>
+        <th *ngFor="let heading of tableHading">{{ heading }}</th>
+      </tr>
+      <tr *ngFor="let tabledata of hoteldata">
+        <th>{{ tabledata.ownerName }}</th>
+        <th>{{ tabledata.ownercontact }}</th>
+        <th>{{ tabledata.hotelName }}</th>
+        <th>{{ tabledata.hotelAddress }}</th>
+        <th>{{ tabledata.hotelContact }}</th>
+        <th>{{ tabledata.dis }}</th>
+        <th>{{ tabledata.roomsAvailable }}</th>
+        <th>{{ tabledata.hotelemail }}</th>
+        <td>
+          <mat-icon (click)="edit(hoteldata.id)" color="primary">edit</mat-icon>
+        </td>
+        <td>
+          <mat-icon (click)="delete(hoteldata.id)" color="warm"
+            >delete</mat-icon
+          >
+        </td>
+      </tr>
+    </table></ng-container
+  >
+</div>

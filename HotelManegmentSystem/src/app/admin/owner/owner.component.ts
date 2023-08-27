@@ -12,6 +12,9 @@ import { CommonapiserviceService } from 'src/app/common/commonapiservice.service
   styleUrls: ['./owner.component.scss'],
 })
 export class OwnerComponent {
+  serchboxval!: any;
+  inp!: any;
+  inputvalue!: any;
   ownerdata!: any;
   tableheading: any[] = ['id', 'name', 'email'];
   dataSource: any = [];
@@ -29,5 +32,12 @@ export class OwnerComponent {
       this.ownerdata = res;
       console.log(this.ownerdata);
     });
+  }
+  inputval(val: any) {
+    this.inp = val.target.value;
+  }
+  serchboxvalue() {
+    this.serchboxval = this.inputvalue;
+    console.log(this.serchboxval);
   }
 }
